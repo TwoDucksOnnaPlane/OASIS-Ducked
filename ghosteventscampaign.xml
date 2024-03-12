@@ -28,17 +28,12 @@
     </EventSet>
     <!-- populate the caves -->
     <EventSet identifier="caves" chooserandom="true" allowatstart="true" percave="true" triggereventcooldown="false">
-      <MonsterEvent characterfile="phantom" minamount="0" maxamount="1" spawntype="cave" />
       <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="cave" />
       <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="cave" />
       <MonsterEvent characterfile="huskvolatile" minamount="0" maxamount="1" spawntype="cave" />
     </EventSet>
     <!-- Populate the wrecks. -->
     <EventSet identifier="wreck" chooserandom="true" allowatstart="true" perwreck="true" triggereventcooldown="false">
-      <EventSet identifier="wreck" chooserandom="true" allowatstart="true" perwreck="true" triggereventcooldown="false" commonness="10">
-        <MonsterEvent characterfile="static" minamount="0" maxamount="1" spawntype="wreck" probability="0.1" />
-        <MonsterEvent characterfile="malevolence" minamount="0" maxamount="1" spawntype="wreck" probability="0.1" />
-      </EventSet>
       <EventSet chooserandom="true" commonness="5" perwreck="true" allowatstart="true" triggereventcooldown="false">
         <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="wreck" probability="0.2" />
         <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="wreck" probability="0.1" />
@@ -48,12 +43,6 @@
     <!-- Timed events -->
     <!-- Trigger at 300 seconds -->
     <EventSet identifier="first" chooserandom="true" mindistancetraveled="1.0" minmissiontime="300" minintensity="0.0" maxintensity="1.0" allowatstart="false">
-      <EventSet chooserandom="true" commonness="15">
-        <MonsterEvent characterfile="malevolence" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
-      </EventSet>
-      <EventSet chooserandom="true" commonness="10">
-        <MonsterEvent characterfile="phantom" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
-      </EventSet>
       <EventSet chooserandom="true" commonness="5">
         <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
         <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
@@ -62,12 +51,6 @@
     </EventSet>
     <!-- Trigger at 1000 seconds -->
     <EventSet identifier="second" chooserandom="true" mindistancetraveled="1.0" minmissiontime="1000" minintensity="0.0" maxintensity="1.0" allowatstart="false">
-      <EventSet chooserandom="true" commonness="10">
-        <MonsterEvent characterfile="static" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
-      </EventSet>
-      <EventSet chooserandom="false" commonness="20">
-        <MonsterEvent characterfile="malevolence" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
-      </EventSet>
       <EventSet chooserandom="true" commonness="5">
         <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
         <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
@@ -76,12 +59,6 @@
     </EventSet>
     <!-- Trigger at 1500 seconds -->
     <EventSet identifier="third" chooserandom="true" mindistancetraveled="1.0" minmissiontime="1500" minintensity="0.0" maxintensity="1.0" allowatstart="false">
-      <EventSet chooserandom="true" commonness="20">
-        <MonsterEvent characterfile="malevolence" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
-      </EventSet>
-      <EventSet chooserandom="false" commonness="10">
-        <MonsterEvent characterfile="static" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
-      </EventSet>
       <EventSet chooserandom="true" commonness="5">
         <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
         <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
@@ -90,12 +67,6 @@
     </EventSet>
     <!-- Trigger at 2500 seconds -->
     <EventSet identifier="fourth" chooserandom="true" mindistancetraveled="1.0" minmissiontime="2500" minintensity="0.0" maxintensity="1.0" allowatstart="false">
-      <EventSet chooserandom="true" commonness="20">
-        <MonsterEvent characterfile="malevolence" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
-      </EventSet>
-      <EventSet chooserandom="false" commonness="10">
-        <MonsterEvent characterfile="static" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
-      </EventSet>
       <EventSet chooserandom="true" commonness="5">
         <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
         <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
