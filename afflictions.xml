@@ -2923,7 +2923,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 0" />
         <Conditional exp="lte 5" />
-        <GiveExperience amount="150" />
+        <GiveExperience amount="100" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2931,7 +2931,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 5" />
         <Conditional exp="lte 10" />
-        <GiveExperience amount="200" />
+        <GiveExperience amount="100" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2939,7 +2939,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 10" />
         <Conditional exp="lte 15" />
-        <GiveExperience amount="250" />
+        <GiveExperience amount="100" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2947,7 +2947,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 15" />
         <Conditional exp="lte 20" />
-        <GiveExperience amount="300" />
+        <GiveExperience amount="100" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2955,7 +2955,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 25" />
         <Conditional exp="lte 30" />
-        <GiveExperience amount="350" />
+        <GiveExperience amount="125" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2963,7 +2963,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 30" />
         <Conditional exp="lte 35" />
-        <GiveExperience amount="400" />
+        <GiveExperience amount="150" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2971,7 +2971,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 35" />
         <Conditional exp="lte 40" />
-        <GiveExperience amount="450" />
+        <GiveExperience amount="175" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2979,7 +2979,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 40" />
         <Conditional exp="lte 45" />
-        <GiveExperience amount="500" />
+        <GiveExperience amount="175" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2987,7 +2987,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 45" />
         <Conditional exp="lte 50" />
-        <GiveExperience amount="550" />
+        <GiveExperience amount="200" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -2995,7 +2995,7 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 50" />
         <Conditional exp="lte 55" />
-        <GiveExperience amount="600" />
+        <GiveExperience amount="200" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
@@ -3003,20 +3003,20 @@
         <Conditional ishuman="True" />
         <Conditional exp="gt 55" />
         <Conditional exp="lt 61" />
-        <GiveExperience amount="650" />
+        <GiveExperience amount="200" />
       </StatusEffect>
     </PeriodicEffect>
     <PeriodicEffect mininterval="60" maxinterval="120">
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="True" />
         <Conditional exp="eq 61" />
-        <GiveExperience amount="700" />
+        <GiveExperience amount="250" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- EXP Generator inflicts this affliction  -->
-  <Affliction name="EXP Starter" identifier="expstarter" type="buff" limbspecific="false" activationthreshold="0" maxstrength="1" strengthchange="0" showiconthreshold="10" showinhealthscannerthreshold="10" hideiconafterdelay="true" interval="1">
+  <Affliction name="EXP Starter" identifier="expstarter" type="buff" limbspecific="false" activdationthreshold="0" maxstrength="1" strengthchange="0" showiconthreshold="10" showinhealthscannerthreshold="10" hideiconafterdelay="true" interval="1">
     <Effect minstrength="0" maxstrength="1" strengthchange="-0.1">
       <StatusEffect target="Character">
         <Conditional exp="eq 0" />

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
+  <loadingscreentip>[DUCKS] undertow please update your modding documentation</loadingscreentip>
   <loadingscreentip>[OASIS] Many food items can be crafted using pomegrenades. Start a farm.</loadingscreentip>
   <loadingscreentip>[OASIS] Ghosts show up on thermal scanners and health HUDs.</loadingscreentip>
   <loadingscreentip>[OASIS] Ghosts can cause heavy distortion on your sonar monitor.</loadingscreentip>
@@ -53,7 +54,6 @@
   <loadingscreentip>[OASIS] Remote Detonators can be an excellent tool for any occasion.</loadingscreentip>
   <loadingscreentip>[OASIS] Tell the Assistant to grab the Volatile Artifact.</loadingscreentip>
   <loadingscreentip>[OASIS] Medicine has weight. If you carry too much, you might find yourself overencumbered and taking more damage while trying to flee from danger.</loadingscreentip>
-  <loadingscreentip>[OASIS]</loadingscreentip>
   <talentname.encroachingterror>Encroaching Terror</talentname.encroachingterror>
   <talentname.cleanliness>Cleanliness is next to Godliness</talentname.cleanliness>
   <talentname.slaughter>Slaughter</talentname.slaughter>

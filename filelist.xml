@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="OASIS Mod" modversion="1.0.467" corepackage="False" steamworkshopid="2774758382" gameversion="1.2.8.0" expectedhash="20B93EB77783C709CE51BBD13D42B4D7">
+<contentpackage name="OASIS Mod (Ducked)" modversion="1.0.0" corepackage="False" gameversion="1.2.8.0">
   <RandomEvents file="%ModDir%/ghostevents.xml" />
   <RandomEvents file="%ModDir%/ghosteventscampaign.xml" />
   <Character file="%ModDir%/Characters/Phantom/Phantom.xml" />
