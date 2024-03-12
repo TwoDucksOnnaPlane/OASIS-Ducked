@@ -2,11 +2,6 @@
 <contentpackage name="OASIS Mod (Ducked)" modversion="1.0.0" corepackage="False" gameversion="1.2.8.0">
   <RandomEvents file="%ModDir%/ghostevents.xml" />
   <RandomEvents file="%ModDir%/ghosteventscampaign.xml" />
-  <Character file="%ModDir%/Characters/Phantom/Phantom.xml" />
-  <Character file="%ModDir%/Characters/Ghost/Ghost.xml" />
-  <Character file="%ModDir%/Characters/Static/Static.xml" />
-  <Character file="%ModDir%/Characters/Malevolence/Malevolence.xml" />
-  <Character file="%ModDir%/Characters/Demon/Demon.xml" />
   <Character file="%ModDir%/Characters/Fractalguardian3/Fractalguardian3.xml" />
   <Character file="%ModDir%/Characters/Fractalguardian3/Fractalguardian4.xml" />
   <Character file="%ModDir%/Characters/HuskHardsuit/HuskHardsuit.xml" />
@@ -15,18 +10,8 @@
   <Character file="%ModDir%/Characters/Swarmdrone/Swarmdrone.xml" />
   <Character file="%ModDir%/Characters/Husktitan/Husktitan.xml" />
   <Character file="%ModDir%/Characters/human/human.xml" />
-  <Character file="%ModDir%/Characters/ClownStalin/ClownStalin.xml" />
-  <Character file="%ModDir%/Characters/Ancientthrall/AncientThrall.xml" />
-  <Character file="%ModDir%/Characters/Ancientaerosolizer/AncientAerosolizer.xml" />
-  <Character file="%ModDir%/Characters/Ancientmimic/AncientMimic.xml" />
-  <Character file="%ModDir%/Characters/Ancientmimic/AncientMimicHusk.xml" />
-  <Character file="%ModDir%/Characters/Ancientsavage/AncientSavage.xml" />
-  <Character file="%ModDir%/Characters/NascentHuman/NascentHuman.xml" />
-  <Character file="%ModDir%/Characters/NascentHuman/NascentHumanNatural.xml" />
-  <Character file="%ModDir%/Characters/NascentHumanTorso/NascentHumanTorso.xml" />
   <Character file="%ModDir%/Characters/Visages/huskvisage.xml" />
   <Afflictions file="%ModDir%/afflictions.xml" />
-  <Afflictions file="%ModDir%/abyssafflictions.xml" />
   <Afflictions file="%ModDir%/afflictionoverrides.xml" />
   <Talents file="%ModDir%/Talents/talentoverrides.xml" />
   <Talents file="%ModDir%/Talents/talents.xml" />
@@ -43,7 +28,6 @@
   <Item file="%ModDir%/Items/money.xml" />
   <Item file="%ModDir%/Items/food.xml" />
   <Item file="%ModDir%/Items/medical.xml" />
-  <Item file="%ModDir%/Items/cult.xml" />
   <Item file="%ModDir%/Items/medicaloverrides.xml" />
   <Particles file="%ModDir%/Items/particleprefabs.xml" />
   <Decals file="%ModDir%/Items/DecalPrefabs.xml" />

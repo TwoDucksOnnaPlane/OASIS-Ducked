@@ -144,37 +144,6 @@
   <!--_______________________________________________________-->
   <!--            Maid outfit. Yep, this is real...          -->
   <!--_______________________________________________________-->
-  <Item name="Maid Outfit" identifier="oasismaidoutfit" category="Equipment" description="Maid dresses were imported alongside clown costumes to try to 'entertain' crewmates. Although it was an abject failure and never caught on like the Honkmother did, some suits have survived all these years. Counts as a clown outfit because of its history." tags="smallitem,clothing,clowngear" fireproof="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
-    <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.01" />
-    <InventoryIcon name="Maid Icon" texture="%ModDir%/Images/MaidOutfit.png" sourcerect="460,213,50,43" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/MaidOutfit.png" sourcerect="424,2,88,47" depth="0.6" origin="0.5,0.5" />
-    <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-      <sprite name="Maid Torso" texture="%ModDir%/Images/MaidOutfit.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Right Hand" texture="%ModDir%/Images/MaidOutfit.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Left Hand" texture="%ModDir%/Images/MaidOutfit.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Right Lower Arm" texture="%ModDir%/Images/MaidOutfit.png" limb="RightForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Left Lower Arm" texture="%ModDir%/Images/MaidOutfit.png" limb="LeftForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Right Upper Arm" texture="%ModDir%/Images/MaidOutfit.png" limb="RightArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Left Upper Arm" texture="%ModDir%/Images/MaidOutfit.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Waist" texture="%ModDir%/Images/MaidOutfit.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Right Thigh" texture="%ModDir%/Images/MaidOutfit.png" limb="RightThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Left Thigh" texture="%ModDir%/Images/MaidOutfit.png" limb="LeftThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Right Leg" texture="%ModDir%/Images/MaidOutfit.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Left Leg" texture="%ModDir%/Images/MaidOutfit.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Right Shoe" texture="%ModDir%/Images/MaidOutfit.png" limb="RightFoot" sound="footstep_maid" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <sprite name="Maid Left Shoe" texture="%ModDir%/Images/MaidOutfit.png" limb="LeftFoot" sound="footstep_maid" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds" damagemultiplier="0.95" />
-    </Wearable>
-  </Item>
-  <Item name="Cat Ears" identifier="oasismaidears" category="Equipment" description="A decorative headband to complement the maid dress. Counts as a clown mask." tags="smallitem,clothing,clownmask" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_metal_heavy">
-    <InventoryIcon texture="%ModDir%/Images/CatEars.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
-    <Sprite name="Green Hood Wearable" texture="%ModDir%/Images/CatEars.png" sourcerect="0,0,128,128" depth="0.6" origin="0.5,0.5" />
-    <Body radius="30" density="50" />
-    <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
-      <sprite name="Headset Wearable" texture="%ModDir%/Images/CatEars.png" limb="Head" depth="0.1" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hideotherwearables="false" sourcerect="0,0,128,128" origin="0.5,0.5" />
-    </Wearable>
-  </Item>
   <!-- Not actually an override -->
   <Override>
     <Item name="Magic Hat" identifier="mh_magichat" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing" description="" scale="0.4">
@@ -2357,213 +2326,6 @@
     </ItemContainer>
 	<StatusHUD drawhudwhenequipped="true" />
   </Item>-->
-  <Item name="Abyssal Cultist Hood" identifier="culthood" category="Equipment" tags="smallitem,clothing,culthood" cargocontaineridentifier="metalcrate" description="Some say we're doomed in the heart of our beliefs," scale="0.4">
-    <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredItem identifier="organicfiber" amount="2" />
-      <RequiredItem identifier="soultank" mincondition="1.0" />
-    </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredItem identifier="blessedfiber" amount="2" />
-    </Fabricate>
-    <Deconstruct time="10" />
-    <Sprite name="Cultist hood" texture="%ModDir%/Images/Cultist robe.png" depth="0.6" sourcerect="431,9,93,97" origin="0.55,0.4" />
-    <Body width="5" height="45" density="15" />
-    <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
-      <sprite name="Cultist Hood Wearable" texture="%ModDir%/Images/Cultist robe.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="431,9,93,97" origin="0.5,0.5" />
-      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.6" />
-      <damagemodifier afflictionidentifiers="penance,hollow,condemned,temphollow" armosector="0.0,360.0" damagemultiplier="0.75" />
-    </Wearable>
-  </Item>
-  <Item name="Abyssal Cultist Robe" identifier="cultrobe" category="Equipment" tags="smallitem,clothing,cultrobe" fireproof="false" cargocontaineridentifier="metalcrate" description="Death stilled their lips and maintained the peace we keep." scale="0.5" impactsoundtag="impact_soft">
-    <PreferredContainer primary="crewcab" minamount="0" maxamount="1" spawnprobability="0.125" />
-    <PreferredContainer primary="outpostcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.05" />
-    <Deconstruct time="10">
-      <Item identifier="ballisticfiber" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredItem identifier="ballisticfiber" amount="2" />
-      <RequiredItem identifier="soultank" mincondition="1.0" />
-    </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredItem identifier="blessedfiber" amount="2" />
-    </Fabricate>
-    <InventoryIcon name="Cultist Robe" texture="%ModDir%/Images/Cultist robe.png" sourcerect="203,38,75,113" origin="0.5,0.5" />
-    <Sprite name="Cultist Robe" texture="%ModDir%/Images/Cultist robe.png" sourcerect="438,195,117,56" depth="0.6" origin="0.5,0.5" />
-    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
-    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-      <sprite name="Cultist robe Torso" texture="%ModDir%/Images/Cultist robe.png" limb="Torso" hidelimb="false" inherittexturescale="true" sourcerect="203,38,75,113" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Lower Arm" texture="%ModDir%/Images/Cultist robe.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" sourcerect="367,118,58,71" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Lower Arm" texture="%ModDir%/Images/Cultist robe.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" sourcerect="303,120,58,72" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Upper Arm" texture="%ModDir%/Images/Cultist robe.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" sourcerect="371,6,48,94" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Upper Arm" texture="%ModDir%/Images/Cultist robe.png" limb="RightArm" hidelimb="true" inherittexturescale="true" sourcerect="308,9,47,94" origin="0.5,0.5" />
-      <sprite name="Cultist robe Waist" texture="%ModDir%/Images/Cultist robe.png" limb="Waist" hidelimb="true" inherittexturescale="true" sourcerect="214,199,62,53" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Thigh" texture="%ModDir%/Images/Cultist robe.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" sourcerect="11,9,71,118" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Thigh" texture="%ModDir%/Images/Cultist robe.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" sourcerect="110,8,71,120" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Leg" texture="%ModDir%/Images/Cultist robe.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" sourcerect="8,137,79,146" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Leg" texture="%ModDir%/Images/Cultist robe.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" sourcerect="99,137,91,144" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Shoe" texture="%ModDir%/Images/Cultist robe.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" sourcerect="311,251,53,32" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Shoe" texture="%ModDir%/Images/Cultist robe.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" sourcerect="372,251,53,32" origin="0.5,0.5" />
-      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.85" />
-      <damagemodifier afflictionidentifiers="penance,hollow,condemned,temphollow" armosector="0.0,360.0" damagemultiplier="0.75" />
-      <StatusEffect type="OnWearing" target="Character">
-        <Condition cultistimmunity="eq 0" />
-        <Affliction identifier="cultwhispers" strength="2" setvalue="true" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
-  <Item name="Abyssal Cultist Garments" identifier="abysscultgarments" category="Equipment" tags="smallitem,clothing,cultrobe,culthood" fireproof="false" cargocontaineridentifier="metalcrate" description="A one-piece robe with a hood included. Allows the simultaneous use of a proper helmet." scale="0.5" impactsoundtag="impact_soft">
-    <PreferredContainer primary="crewcab" minamount="0" maxamount="1" spawnprobability="0.125" />
-    <PreferredContainer primary="outpostcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.05" />
-    <Deconstruct time="10">
-      <Item identifier="blessedfiber" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredItem identifier="cultrobe" />
-      <RequiredItem identifier="culthood" />
-    </Fabricate>
-    <InventoryIcon name="Cultist Robe" texture="%ModDir%/Images/Cultist robe.png" sourcerect="203,38,75,113" origin="0.5,0.5" />
-    <Sprite name="Cultist Robe" texture="%ModDir%/Images/Cultist robe.png" sourcerect="438,195,117,56" depth="0.6" origin="0.5,0.5" />
-    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
-    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-      <sprite name="Cultist Hood Wearable" texture="%ModDir%/Images/Cultist robe.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="431,9,93,97" origin="0.5,0.5" hideotherwearables="true" />
-      <sprite name="Cultist robe Torso" texture="%ModDir%/Images/Cultist robe.png" limb="Torso" hidelimb="false" inherittexturescale="true" sourcerect="203,38,75,113" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Lower Arm" texture="%ModDir%/Images/Cultist robe.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" sourcerect="367,118,58,71" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Lower Arm" texture="%ModDir%/Images/Cultist robe.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" sourcerect="303,120,58,72" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Upper Arm" texture="%ModDir%/Images/Cultist robe.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" sourcerect="371,6,48,94" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Upper Arm" texture="%ModDir%/Images/Cultist robe.png" limb="RightArm" hidelimb="true" inherittexturescale="true" sourcerect="308,9,47,94" origin="0.5,0.5" />
-      <sprite name="Cultist robe Waist" texture="%ModDir%/Images/Cultist robe.png" limb="Waist" hidelimb="true" inherittexturescale="true" sourcerect="214,199,62,53" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Thigh" texture="%ModDir%/Images/Cultist robe.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" sourcerect="11,9,71,118" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Thigh" texture="%ModDir%/Images/Cultist robe.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" sourcerect="110,8,71,120" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Leg" texture="%ModDir%/Images/Cultist robe.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" sourcerect="8,137,79,146" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Leg" texture="%ModDir%/Images/Cultist robe.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" sourcerect="99,137,91,144" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Shoe" texture="%ModDir%/Images/Cultist robe.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" sourcerect="311,251,53,32" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Shoe" texture="%ModDir%/Images/Cultist robe.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" sourcerect="372,251,53,32" origin="0.5,0.5" />
-      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.85" />
-      <damagemodifier afflictionidentifiers="penance,hollow,condemned,temphollow" armosector="0.0,360.0" damagemultiplier="0.75" />
-      <StatusEffect type="OnWearing" target="Character" duration="1" stackable="false">
-        <Conditional thrallcurse="gt 0" />
-        <Affliction identifier="thrallcurse" amount="10" setvalue="true" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
-  <Item name="Abyssal Harbinger Garments" identifier="abyssharbingergarments" category="Equipment" tags="smallitem,clothing,cultrobe,culthood" fireproof="false" cargocontaineridentifier="metalcrate" description="A one-piece robe enchanted by and for Abyssal Harbingers." scale="0.5" impactsoundtag="impact_soft">
-    <InventoryIcon name="Cultist Robe" texture="%ModDir%/Images/harbingerrobe.png" sourcerect="203,38,75,113" origin="0.5,0.5" />
-    <Sprite name="Cultist Robe" texture="%ModDir%/Images/harbingerrobe.png" sourcerect="438,195,117,56" depth="0.6" origin="0.5,0.5" />
-    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
-    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-      <sprite name="Cultist Hood Wearable" texture="%ModDir%/Images/harbingerrobe.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="431,9,93,97" origin="0.5,0.5" hideotherwearables="true" />
-      <sprite name="Cultist robe Torso" texture="%ModDir%/Images/harbingerrobe.png" limb="Torso" hidelimb="false" inherittexturescale="true" sourcerect="203,38,75,113" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Lower Arm" texture="%ModDir%/Images/harbingerrobe.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" sourcerect="367,118,58,71" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Lower Arm" texture="%ModDir%/Images/harbingerrobe.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" sourcerect="303,120,58,72" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Upper Arm" texture="%ModDir%/Images/harbingerrobe.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" sourcerect="371,6,48,94" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Upper Arm" texture="%ModDir%/Images/harbingerrobe.png" limb="RightArm" hidelimb="true" inherittexturescale="true" sourcerect="308,9,47,94" origin="0.5,0.5" />
-      <sprite name="Cultist robe Waist" texture="%ModDir%/Images/harbingerrobe.png" limb="Waist" hidelimb="true" inherittexturescale="true" sourcerect="214,199,62,53" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Thigh" texture="%ModDir%/Images/harbingerrobe.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" sourcerect="11,9,71,118" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Thigh" texture="%ModDir%/Images/harbingerrobe.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" sourcerect="110,8,71,120" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Leg" texture="%ModDir%/Images/harbingerrobe.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" sourcerect="8,137,79,146" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Leg" texture="%ModDir%/Images/harbingerrobe.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" sourcerect="99,137,91,144" origin="0.5,0.5" />
-      <sprite name="Cultist robe Right Shoe" texture="%ModDir%/Images/harbingerrobe.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" sourcerect="311,251,53,32" origin="0.5,0.5" />
-      <sprite name="Cultist robe Left Shoe" texture="%ModDir%/Images/harbingerrobe.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" sourcerect="372,251,53,32" origin="0.5,0.5" />
-      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.4" />
-      <damagemodifier afflictionidentifiers="penance,hollow,condemned,temphollow" armosector="0.0,360.0" damagemultiplier="0.0" />
-      <StatusEffect type="OnWearing" target="Character" duration="1" stackable="false">
-        <Conditional ishuman="True" />
-        <Affliction identifier="pressurestabilized" amount="10" setvalue="true" />
-        <Affliction identifier="ghostimmunity" amount="10" setvalue="true" />
-      </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" duration="1" stackable="false">
-        <Conditional thrallcurse="gt 0" />
-        <ReduceAffliction identifier="thrallcurse" amount="10" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
-  <Item name="Elder Cultist Garments" identifier="eldercultistgarments" category="Equipment" tags="smallitem,clothing,cultrobe,culthood" fireproof="false" cargocontaineridentifier="metalcrate" description="The old one beckons." scale="0.5" impactsoundtag="impact_soft">
-    <InventoryIcon name="Elder Cultist Robe" texture="%ModDir%/Images/evilrobe.png" sourcerect="203,38,75,113" origin="0.5,0.5" />
-    <Sprite name="Elder Cultist Robe" texture="%ModDir%/Images/evilrobe.png" sourcerect="438,195,117,56" depth="0.6" origin="0.5,0.5" />
-    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
-    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-      <sprite name="Elder Cultist Hood Wearable" texture="%ModDir%/Images/evilrobe.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="431,9,93,97" origin="0.5,0.5" hideotherwearables="true" />
-      <sprite name="Elder Cultist robe Torso" texture="%ModDir%/Images/evilrobe.png" limb="Torso" hidelimb="false" inherittexturescale="true" sourcerect="203,38,75,113" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Left Lower Arm" texture="%ModDir%/Images/evilrobe.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" sourcerect="367,118,58,71" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Right Lower Arm" texture="%ModDir%/Images/evilrobe.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" sourcerect="303,120,58,72" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Left Upper Arm" texture="%ModDir%/Images/evilrobe.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" sourcerect="371,6,48,94" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Right Upper Arm" texture="%ModDir%/Images/evilrobe.png" limb="RightArm" hidelimb="true" inherittexturescale="true" sourcerect="308,9,47,94" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Waist" texture="%ModDir%/Images/evilrobe.png" limb="Waist" hidelimb="true" inherittexturescale="true" sourcerect="214,199,62,53" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Right Thigh" texture="%ModDir%/Images/evilrobe.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" sourcerect="11,9,71,118" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Left Thigh" texture="%ModDir%/Images/evilrobe.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" sourcerect="110,8,71,120" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Right Leg" texture="%ModDir%/Images/evilrobe.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" sourcerect="8,137,79,146" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Left Leg" texture="%ModDir%/Images/evilrobe.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" sourcerect="99,137,91,144" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Right Shoe" texture="%ModDir%/Images/evilrobe.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" sourcerect="311,251,53,32" origin="0.5,0.5" />
-      <sprite name="Elder Cultist robe Left Shoe" texture="%ModDir%/Images/evilrobe.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" sourcerect="372,251,53,32" origin="0.5,0.5" />
-      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.4" />
-      <damagemodifier afflictionidentifiers="penance,hollow,condemned,beckoning" armosector="0.0,360.0" damagemultiplier="0.0" />
-      <StatusEffect type="OnWearing" target="Character" duration="1" stackable="false">
-        <Conditional ishuman="True" />
-        <Affliction identifier="pressurestabilized" amount="10" setvalue="true" />
-        <Affliction identifier="ghostimmunity" amount="10" setvalue="true" />
-        <sound file="%ModDir%/Sounds/itscoming.ogg" range="1000.0" volume="1" dontmuffle="true" />
-      </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" duration="1" stackable="false">
-        <Conditional thrallcurse="gt 0" />
-        <ReduceAffliction identifier="thrallcurse" amount="10" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
-  <Item name="Curse Implant" description="An implant distributed to Harbingers to punish those who kill them." identifier="abyssharbingerimplant" scale="0.4" category="Equipment" tags="smallitem" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" nonplayerteaminteractable="False">
-    <InventoryIcon texture="Content/Items/Genetic/Genetic.png" sourcerect="244,62,76,65" origin="0.5,0.5" />
-    <Sprite name="Headset" texture="Content/Items/Genetic/Genetic.png" depth="0.6" sourcerect="67,85,73,35" origin="0.5,0.5" />
-    <Body radius="15" width="45" density="30" />
-    <Wearable limbtype="Head" slots="Any,HealthInterface" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
-      <StatusEffect type="OnWearing" target="This,Character" comparison="and" delay="1.0" stackable="false">
-        <Conditional isdead="True" />
-        <sound file="%ModDir%/Sounds/uboa.ogg" range="2500.0" volume="1.5" />
-        <Explosion range="500.0" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="400" force="5.0" severlimbsprobability="1.0" decal="explosion" decalsize="0.75">
-          <Affliction identifier="burn" strength="100" />
-          <Affliction identifier="thrallreanimation" strength="100" />
-          <Affliction identifier="stun" strength="5" />
-        </Explosion>
-        <Explosion range="1500.0" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="400" force="5.0" severlimbsprobability="1.0" decal="explosion" decalsize="0.75">
-          <Affliction identifier="burn" strength="25" />
-          <Affliction identifier="thrallreanimation" strength="100" />
-          <Affliction identifier="flashblind" strength="200" />
-          <Affliction identifier="incrementalstun" strength="100" />
-        </Explosion>
-        <Spawnitem identifier="cultsingulosmall" SpawnPosition="This" />
-      </StatusEffect>
-      <StatusEffect type="OnWearing" target="This,Character" comparison="and" delay="1.1" stackable="false">
-        <Conditional isdead="True" />
-        <RemoveCharacter />
-      </StatusEffect>
-      <sprite name="Gene Splicer Wearable" texture="Content/Items/Genetic/Genetic.png" limb="Head" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.5" hideotherwearables="false" sourcerect="258,131,64,54" origin="0.6,0.0" />
-    </Wearable>
-  </Item>
-  <Item name="Abyssal Ritual Lantern" description="A lantern which soothes all nearby demons." identifier="oasisrituallanternspecial" category="Equipment" maxstacksize="1" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,light,huskcult,abysscult" impactsoundtag="impact_soft" nonplayerteaminteractable="true">
-    <Deconstruct time="5" />
-    <InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="169,137,45,60" origin="0.5,0.5" />
-    <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="218,137,41,54" depth="0.55" origin="0.5,0.5" />
-    <Body width="40" height="50" density="12" />
-    <Holdable slots="Any,RightHand,LeftHand" holdpos="70,-70" handle1="-5,10" holdangle="0" msg="ItemMsgPickUpSelect">
-      <StatusEffect target="This" type="OnNotContained">
-        <Remove />
-      </StatusEffect>
-    </Holdable>
-    <LightComponent LightColor="219,100,239,80" Flicker="0.2" pulsefrequency="0.2" pulseamount="0.5" range="600" IsOn="true">
-      <StatusEffect type="OnSpawn" targettype="This" IsOn="true" />
-      <StatusEffect type="OnActive" targettype="This">
-        <Conditional PhysicsBodyActive="eq true" />
-        <ParticleEmitter particle="flare" particlespersecond="15" scalemin="0.1" scalemax="0.1" />
-        <ParticleEmitter particle="ritualsmoke" particlespersecond="5" anglemin="0" anglemax="360" velocitymin="10" velocitymax="150" scalemin="0.5" scalemax="1.0" />
-      </StatusEffect>
-      <StatusEffect type="OnActive" target="NearbyCharacters" range="1000" delay="0.5" stackable="false" disabledeltatime="true">
-        <Affliction identifier="disguisedashusk" amount="1.0" />
-        <Affliction identifier="cultistimmunity" amount="10" />
-        <ReduceAffliction type="damage" amount="0.1" />
-        <ReduceAffliction type="burn" amount="0.2" />
-        <ReduceAffliction type="opiatewithdrawal" amount="0.2" />
-      </StatusEffect>
-    </LightComponent>
-  </Item>
   <Item name="Mining Lantern" description="A simple LED lantern, useful for lighting dark areas." spritecolor="255,240,200,255" inventoryiconcolor="255,240,200,255" identifier="oasismininglantern" category="Equipment" maxstacksize="1" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,light" impactsoundtag="impact_soft">
     <PreferredContainer primary="divingcab" minamount="1" maxamount="2" spawnprobability="1" notcampaign="true" />
     <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
@@ -2742,14 +2504,14 @@
 	  <RequiredItem identifier="detonator" amount="2" />
 	  <RequiredItem identifier="wire" amount="2" />
     </Fabricate>
-	<Fabricate suitablefabricators="fabricator" requiredtime="15">
+	  <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem identifier="deadmanvestbroken" />
 	  <RequiredItem identifier="organicfiber" />
 	  <RequiredItem identifier="detonator" />
 	  <RequiredItem identifier="wire" />
     </Fabricate>
-	<CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+	  <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
       <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="ItemUI" />
       <Button text="Detonate">
         <StatusEffect type="OnUse" targettype="This" Condition="0" setvalue="true" />
@@ -2774,10 +2536,10 @@
 	    <Spawnitem identifier="deadmanvestbroken" />
 		<Remove />
 	  </StatusEffect>
-	</Wearable>
-	<ItemContainer capacity="2" maxstacksize="1" hideitems="true" containedstateindicatorstyle="explosive">
+	  </Wearable>
+	  <ItemContainer capacity="2" maxstacksize="1" hideitems="true" containedstateindicatorstyle="explosive">
 	  <Containable items="explosive"/>
-	</ItemContainer>
+	  </ItemContainer>
   </Item>-->
   <Override>
     <Item name="Modified Toolbelt" identifier="suicidebelt" category="Equipment" tags="smallitem,mobilecontainer,tool" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="A modified toolbelt which can hold medium items, but limits stacking. Features fireproofing." impactsoundtag="impact_soft">
@@ -2847,111 +2609,8 @@
       <damagemodifier afflictionidentifiers="bitewounds" armorsector="0.0,360.0" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
       <sprite name="DM Vest Wearable" texture="%ModDir%/Images/SuicideVest.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="4,4,70,102" />
-	</Wearable>
+	  </Wearable>
   </Item>-->
-  <!-- cursed bike horn handcuffs -->
-  <Item name="Cursed Bike Horn" identifier="cursedbikehorn" category="Misc" tags="smallitem,hornitem" scale="0.5" cargocontaineridentifier="metalcrate" description="What horrible thing must you have done to be cursed with this horn? There is no escape from this torment, you will never be free." nonplayerteaminteractable="true">
-    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/Misc/Misc.png" sourcerect="101,45,53,22" depth="0.55" />
-    <Body width="50" height="20" density="15" />
-    <Holdable slots="RightHand+LeftHand" aimpos="100,0" handle1="-15,-3" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="Always" target="Character" lockhands="true" setvalue="true" />
-      <StatusEffect type="Always" target="This,Character" condition="-100">
-        <Conditional isdead="True" />
-      </StatusEffect>
-      <StatusEffect type="OnNotContained" target="This" condition="-100" />
-      <StatusEffect type="OnBroken" target="This" delay="0.5">
-        <Remove />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" stackable="false">
-        <ParticleEmitter particle="singulobig" particleamount="1" velocitymin="0" velocitymax="0" scale="0.4" />
-        <Sound file="%ModDir%/Sounds/singulostart.ogg" range="1000" />
-      </StatusEffect>
-    </Holdable>
-    <RangedWeapon reload="2">
-      <Sound file="Content/Items/Weapons/honk.ogg" type="OnUse" />
-    </RangedWeapon>
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
-  </Item>
-  <!-- cursed clown mask that blocks talking -->
-  <Item name="Cursed Clown Mask" identifier="cursedclownmask" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing,clownmask" description="You are stuck with this mask forever, it will never be removed and your face will always be that of the punished." scale="0.5" nonplayerteaminteractable="true">
-    <Sprite name="Clown Mask" texture="Content/Items/Jobgear/headgears.png" depth="0.6" sourcerect="414,318,89,71" origin="0.5,0.5" scale="0.5" />
-    <Body width="40" radius="30" density="15" />
-    <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
-      <StatusEffect tags="gagged" type="OnWearing" target="Character" setvalue="true" stackable="false" speechImpediment="100.0" />
-      <sprite name="Clown Mask Wearable" texture="Content/Items/Jobgear/headgears.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.75" sourcerect="414,318,89,71" origin="0.5,0.6" />
-      <StatusEffect tags="clown" type="OnWearing" target="Character" HideFace="true" duration="0.1" stackable="false" />
-      <StatusEffect type="Always" target="This,Character" condition="-100">
-        <Conditional isdead="True" />
-      </StatusEffect>
-      <StatusEffect type="OnNotContained" target="This" condition="-100" />
-      <StatusEffect type="OnBroken" target="This" delay="0.5">
-        <Remove />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" stackable="false">
-        <ParticleEmitter particle="singulobig" particleamount="1" velocitymin="0" velocitymax="0" scale="0.4" />
-        <Sound file="%ModDir%/Sounds/singulostart.ogg" range="1000" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
-  <!-- cursed clown costume that cannot be removed -->
-  <Item name="Cursed Clown Costume" identifier="cursedclowncostume" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing,clowngear" description="From the annoying honks this outfit makes to the cursed nature, it exists to torture the wearer." impactsoundtag="impact_soft" scale="0.5" nonplayerteaminteractable="true">
-    <InventoryIcon name="Clown Costume Icon" texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,448,64,64" origin="0.5,0.5" />
-    <Sprite name="Clown Costume" texture="Content/Items/Jobgear/MiscJobGear.png" sourcerect="247,14,117,55" depth="0.6" origin="0.5,0.5" />
-    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
-    <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
-      <sprite name="Clown's Costume Torso" texture="%ModDir%/Images/clown.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Hand" texture="%ModDir%/Images/clown.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Hand" texture="%ModDir%/Images/clown.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Lower Arm" texture="%ModDir%/Images/clown.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Lower Arm" texture="%ModDir%/Images/clown.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Upper Arm" texture="%ModDir%/Images/clown.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Upper Arm" texture="%ModDir%/Images/clown.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Waist" texture="%ModDir%/Images/clown.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Thigh" texture="%ModDir%/Images/clown.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Thigh" texture="%ModDir%/Images/clown.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Leg" texture="%ModDir%/Images/clown.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Leg" texture="%ModDir%/Images/clown.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Shoe" texture="%ModDir%/Images/clown.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sound="footstep_clown" />
-      <sprite name="Clown's Costume Right Shoe" texture="%ModDir%/Images/clown.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sound="footstep_clown" />
-      <!-- HENK -->
-      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagesound="LimbClown" />
-      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagesound="LimbClown" />
-      <StatValue stattype="SwimmingSpeed" value="-0.5" />
-      <StatValue stattype="WalkingSpeed" value="-0.5" />
-      <StatusEffect type="Always" target="This,Character" condition="-100">
-        <Conditional isdead="True" />
-      </StatusEffect>
-      <StatusEffect type="OnNotContained" target="This" condition="-100" />
-      <StatusEffect type="OnBroken" target="This" delay="0.5">
-        <Remove />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" stackable="false">
-        <ParticleEmitter particle="singulobig" particleamount="1" velocitymin="0" velocitymax="0" scale="0.4" />
-        <Sound file="%ModDir%/Sounds/singulostart.ogg" range="1000" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
-  <!-- clown mask that does not block talking -->
-  <Item name="Cursed Clown Mask 2" identifier="cursedclownmask2" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing,clownmask" description="You are stuck with this mask forever, it will never be removed and your face will always be that of the punished." scale="0.5" nonplayerteaminteractable="true">
-    <Sprite name="Clown Mask" texture="Content/Items/Jobgear/headgears.png" depth="0.6" sourcerect="414,318,89,71" origin="0.5,0.5" scale="0.5" />
-    <Body width="40" radius="30" density="15" />
-    <Wearable limbtype="Head" slots="Head" msg="ItemMsgPickUpSelect">
-      <sprite name="Clown Mask Wearable" texture="Content/Items/Jobgear/headgears.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.75" sourcerect="414,318,89,71" origin="0.5,0.6" />
-      <StatusEffect tags="clown" type="OnWearing" target="Character" HideFace="true" duration="0.1" stackable="false" />
-      <StatusEffect type="Always" target="This,Character" condition="-100">
-        <Conditional isdead="True" />
-      </StatusEffect>
-      <StatusEffect type="OnNotContained" target="This" condition="-100" />
-      <StatusEffect type="OnBroken" target="This" delay="0.5">
-        <Remove />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" stackable="false">
-        <ParticleEmitter particle="singulobig" particleamount="1" velocitymin="0" velocitymax="0" scale="0.4" />
-        <Sound file="%ModDir%/Sounds/singulostart.ogg" range="1000" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
   <!-- Cheaper option to breathe hull oxygen and perform somewhat better indoors -->
   <Item name="Assault Suit" identifier="oasisassaultsuit" category="Equipment,Diving" tags="diving,deepdiving,divinggear_wearableindoors,provocative" allowasextracargo="true" scale="0.5" fireproof="true" description="A Coalition-built suit based off the PUCS but significantly simplified so it can be produced more easily. It is intended for amphibious assault teams who may need to deal with breaches at any moment. Rated for 6000 meters." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" spawnprobability="0.0" />
@@ -3124,44 +2783,6 @@
       <damagemodifier armorsector="0.0,360.0" afflictiontypes="lostsoul" damagemultiplier="1.0" probabilitymultiplier="0.75" damagesound="LimbArmor" />
     </Wearable>
   </Item>
-  <!-- badonker clown -->
-  <Item name="Stripper's Clown Costume" description="An EXTRA funny clown costume with extra skin and some GIANT INFLATABLE HONKERS." identifier="badonkerclowncostume" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing,clowngear" impactsoundtag="impact_soft" scale="0.5">
-    <Price baseprice="40" canbespecial="false">
-      <Price storeidentifier="merchantoutpost" minavailable="1" />
-      <Price storeidentifier="merchantcity" minavailable="1" />
-      <Price storeidentifier="merchantresearch" sold="false" />
-      <Price storeidentifier="merchantmilitary" sold="false" />
-      <Price storeidentifier="merchantmine" sold="false" />
-    </Price>
-    <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
-    <PreferredContainer primary="crewcab" />
-    <InventoryIcon name="Clown Costume Icon" texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,448,64,64" origin="0.5,0.5" />
-    <Sprite name="Clown Costume" texture="Content/Items/Jobgear/MiscJobGear.png" sourcerect="247,14,117,55" depth="0.6" origin="0.5,0.5" />
-    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
-    <Deconstruct time="40">
-      <Item identifier="bikehorn" />
-      <Item identifier="bikehorn" />
-      <Item identifier="bikehorn" />
-    </Deconstruct>
-    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-      <sprite name="Clown's Costume Torso" texture="%ModDir%/Images/badonkerclown.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Hand" texture="%ModDir%/Images/badonkerclown.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Hand" texture="%ModDir%/Images/badonkerclown.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Lower Arm" texture="%ModDir%/Images/badonkerclown.png" limb="RightArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Lower Arm" texture="%ModDir%/Images/badonkerclown.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Upper Arm" texture="%ModDir%/Images/badonkerclown.png" limb="RightForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" sourcerect="1,1,1,1," />
-      <sprite name="Clown's Costume Left Upper Arm" texture="%ModDir%/Images/badonkerclown.png" limb="LeftForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" sourcerect="1,1,1,1," />
-      <sprite name="Clown's Costume Waist" texture="%ModDir%/Images/badonkerclown.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Thigh" texture="%ModDir%/Images/badonkerclown.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Thigh" texture="%ModDir%/Images/badonkerclown.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Right Leg" texture="%ModDir%/Images/badonkerclown.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Leg" texture="%ModDir%/Images/badonkerclown.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Clown's Costume Left Shoe" texture="%ModDir%/Images/badonkerclown.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sound="footstep_clown" />
-      <sprite name="Clown's Costume Right Shoe" texture="%ModDir%/Images/badonkerclown.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sound="footstep_clown" />
-      <!-- HAAAAAAANK -->
-      <damagemodifier afflictiontypes="damage" damagemultiplier="0.85" armorsector="0.0,360.0" damagesound="LimbClown" />
-    </Wearable>
-  </Item>
   <!-- Implant to brainwash a subject -->
   <Item name="Lobotomization Implant" description="An implant forcibly placed within a subject to pacify them." identifier="lobotomyimplant" scale="0.4" category="Equipment" tags="smallitem" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
     <Deconstruct time="10">
@@ -3281,77 +2902,6 @@
       <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" damagemultiplier="0.0" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictionidentifiers="stun" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
       <sprite name="Iron Helmet" texture="%ModDir%/Images/OasisPurifier.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="1.0" hidewearablesoftype="Hair" sourcerect="440,8,68,69" origin="0.5,0.5" />
-      <StatusEffect type="OnWearing" target="Character">
-        <Conditional fanaticmanager="eq 0" />
-        <Affliction identifier="penance" amount="5" />
-      </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character">
-        <Conditional fanaticmanager="gt 0" />
-        <ReduceAffliction identifier="penance" amount="5" />
-        <ReduceAffliction identifier="hollow" amount="5" />
-        <ReduceAffliction identifier="condemned" amount="5" />
-      </StatusEffect>
-    </Wearable>
-  </Item>
-  <!-- Kromer's Coat -->
-  <Item name="Kromer's Coat" identifier="kromercoat" category="Equipment" hideinmenus="true" inventoryiconcolor="255,100,100,255" decription="The ideal attire for dreamers of human wholeness." cargocontaineridentifier="metalcrate" tags="smallitem,clothing" scale="0.51" impactsoundtag="impact_soft">
-    <PreferredContainer primary="abandonedsecarmcab" />
-    <Deconstruct time="5">
-      <Item identifier="titaniumaluminiumalloy" />
-      <Item identifier="ballisticfiber" />
-    </Deconstruct>
-    <InventoryIcon name="Trench Coat Icon" texture="%ModDir%/Images/InventoryIcons.png" sourcerect="246,0,121,86" origin="0.5,0.5" />
-    <Sprite name="Trench Coat Dropped" texture="%ModDir%/Images/InventoryIcons.png" sourcerect="247,105,115,54" depth="0.6" origin="0.5,0.5" />
-    <Body width="100" height="50" density="30" friction="0.8" restitution="0.01" />
-    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-      <!-- <sprite name="Trench Coat Torso" texture="%ModDir%/Images/trenchcoat.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" /> -->
-      <sprite name="Kromer Vest Wearable" texture="%ModDir%/Images/InventoryIcons.png" limb="Torso" hidelimb="false" inheritscale="true" scale="1" inheritorigin="false" origin="0.69,0.3" inheritsourcerect="false" sourcerect="621,540,73,228" />
-      <sprite name="Kromer Coat Right Hand" texture="%ModDir%/Images/kromercoat.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,1,1" />
-      <sprite name="Makeshift Armor Left Hand" texture="%ModDir%/Images/OasisPurifier.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Kromer Coat Right Lower Arm" texture="%ModDir%/Images/kromercoat.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Left Forearm" texture="%ModDir%/Images/OasisPurifier.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Kromer Coat Right Upper Arm" texture="%ModDir%/Images/kromercoat.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Left Upper Arm" texture="%ModDir%/Images/OasisPurifier.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Kromer Coat Waist" texture="%ModDir%/Images/kromercoat.png" limb="Waist" hidelimb="true" inherittexturescale="false" scale="0.3" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Right Thigh" texture="%ModDir%/Images/OasisPlate.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Left Thigh" texture="%ModDir%/Images/OasisPlate.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Right Leg" texture="%ModDir%/Images/OasisPurifier.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Left Leg" texture="%ModDir%/Images/OasisPurifier.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Left Shoe" texture="%ModDir%/Images/OasisPurifier.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Makeshift Armor Right Shoe" texture="%ModDir%/Images/OasisPurifier.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
-      <damagemodifier afflictionidentifiers="lacerations,bitewounds,burn" armorsector="0.0,360.0" damagemultiplier="0.5" />
-      <damagemodifier afflictionidentifiers="blunttrauma,bleeding,gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.5" />
-      <StatusEffect type="OnWearing" target="Character" duration="1" stackable="false">
-        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
-      </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character">
-        <Conditional fanaticmanager="eq 0" />
-        <Affliction identifier="penance" amount="5" />
-      </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character">
-        <Conditional fanaticmanager="gt 0" />
-        <ReduceAffliction identifier="penance" amount="5" />
-        <ReduceAffliction identifier="hollow" amount="5" />
-        <ReduceAffliction identifier="condemned" amount="5" />
-      </StatusEffect>
-    </Wearable>
-    <ItemContainer capacity="4" maxstacksize="8">
-      <Containable items="smallitem,mediumitem" excludeditems="clothing,toolbox,mobilecontainer,rucksack,backpack,waistbelt,vest,backpack1,medicalbackpack,power-backpack,duffelbag,heavybackpack,oxy-gen. backpack,xeno-backpack,techno-backpack" />
-    </ItemContainer>
-  </Item>
-  <Item name="Kromer's Helmet" identifier="kromerhelmet" spritecolor="0,0,0,0" hideinmenus="true" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="Placeholder for resistances." impactsoundtag="impact_metal_heavy" scale="0.5">
-    <PreferredContainer primary="secarmcab" amount="0" notcampaign="true" />
-    <PreferredContainer secondary="armcab" />
-    <Body width="70" height="80" density="30" />
-    <Sprite name="Makeshift Helmet Item" texture="%ModDir%/Images/OasisPurifier.png" sourcerect="440,8,68,69" depth="0.6" origin="0.5,0.5" />
-    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" SpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" />
-      <damagemodifier afflictionidentifiers="gunshotwound, explosiondamage, blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.15" />
-      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" damagemultiplier="0.0" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="stun" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
-      <sprite name="Iron Helmet" texture="%ModDir%/Images/OasisPurifier.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="1.0" hidelimb="false" sourcerect="0,0,1,1" origin="0.5,0.5" />
       <StatusEffect type="OnWearing" target="Character">
         <Conditional fanaticmanager="eq 0" />
         <Affliction identifier="penance" amount="5" />
