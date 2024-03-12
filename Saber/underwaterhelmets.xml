@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Coalition Horizons X-AMCP Helmet MK1 -->
+  <Item name="ORCA Deep Dive Helmet MK1" identifier="horizonshelmetmk1" aliases="" category="Equipment" tags="smallitem,clothing,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" description="An advanced diving helmet meant to complement the Mk2 Horizons suit. It features many of the same protective qualities and comes with a built in light." impactsoundtag="impact_metal_heavy" scale="0.4">
+    <Upgrade gameversion="0.9.6.0" scale="0.4" />
+    <Price baseprice="1309" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="1" maxavailable="3" sold="true">
+        <Reputation faction="coalition" min="40" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="50">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredSkill identifier="electrical" level="15" />
+      <RequiredSkill identifier="weapons" level="45" />
+      <RequiredItem identifier="advmaskedpeacekeeperhelmet" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="lead" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="advmaskedpeacekeeperhelmet" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="lead" />
+    </Deconstruct>
+    <Sprite name="underwaterhelmetsw1" texture="%ModDir%/Saber/hedwba.png" sourcerect="0,0,85,79" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="stun,progressivestun,incrementalstun" armorsector="0.0,360.0" damagemultiplier="0.50" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.50" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="emp" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.25" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.40" damagesound="LimbArmor" />
+      <!--Real Sonar support-->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="sonardamage" damagemultiplier="0.40" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="activesonarbeacon" damagemultiplier="0.40" damagesound="LimbArmor" /> -->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="acoustictrauma" damagemultiplier="0.15" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="vibrationdamage" damagemultiplier="0.15" damagesound="LimbArmor" /> -->
+      <!-- Zombie protection -->
+      <damagemodifier afflictiontypes="recentlybitten" damagemultiplier="0.75" probabilitymultiplier="0.75" />
+      <!-- Light toggle -->
+      <CustomInterface canbeselected="true" allowuioverlap="true" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="CenterLeft" style="ItemUI" />
+        <TickBox text="Light" IsOn="true">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <sprite name="underwaterhelmetsw1" texture="%ModDir%/Saber/hedwba.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inherittexturescale="false" scale="0.37" hideotherwearables="true" sourcerect="0,0,85,79" origin="0.47727272,0.46506026">
+        <LightComponent range="450" lightcolor="0.5,0.5,0.5,1.0" powerconsumption="5" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.03, 0.49" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnActive" target="Contained" Condition="-0.2" targetslot="1">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" tags="sonarprotection" duration="0.1" />
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.90" UseHullOxygen="true" ObstructVision="true" setvalue="true" disabledeltatime="true">
+        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect tags="PressureHelmet" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable identifiers="oxygensource,weldingtoolfuel" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" targetslot="1" />
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <!--Coalition Horizons X-AMCP MK2-->
+  <Item name="ORCA Deep Dive Helmet MK2 «Status»" identifier="horizonshelmetmk2" aliases="" category="Equipment" tags="smallitem,clothing,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" description="A direct upgrade to its predecessor, it features better battery life and an automatic hull oxygen system to conserve resources. On top of this, it features a health scanner HUD." impactsoundtag="impact_metal_heavy" scale="0.4">
+    <Upgrade gameversion="0.9.6.0" scale="0.4" />
+    <Price baseprice="1525" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredSkill identifier="electrical" level="15" />
+      <RequiredSkill identifier="weapons" level="45" />
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="horizonshelmetmk1" />
+      <RequiredItem identifier="healthscanner" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="horizonshelmetmk1" />
+      <Item identifier="healthscanner" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Sprite name="poweredorcahelm812" texture="%ModDir%/Saber/hedwbb.png" sourcerect="0,0,85,79" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagemultiplier="0.10" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="stun,progressivestun,incrementalstun" armorsector="0.0,360.0" damagemultiplier="0.40" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.40" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="emp" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.20" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.30" damagesound="LimbArmor" />
+      <!--Real Sonar support-->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="sonardamage" damagemultiplier="0.25" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="activesonarbeacon" damagemultiplier="0.25" damagesound="LimbArmor" /> -->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="acoustictrauma" damagemultiplier="0.1" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="vibrationdamage" damagemultiplier="0.1" damagesound="LimbArmor" /> -->
+      <!-- Zombie protection -->
+      <damagemodifier afflictiontypes="recentlybitten" damagemultiplier="0.5" probabilitymultiplier="0.5" />
+      <!-- Light toggle -->
+      <CustomInterface canbeselected="true" allowuioverlap="true" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="CenterLeft" style="ItemUI" />
+        <TickBox text="Light" IsOn="true">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <sprite name="underwaterhelmetsw1" texture="%ModDir%/Saber/hedwba.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inherittexturescale="false" scale="0.37" hideotherwearables="true" sourcerect="0,0,85,79" origin="0.47727272,0.46506026">
+        <LightComponent range="450" lightcolor="0.5,0.5,0.5,1.0" powerconsumption="5" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.03, 0.49" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnActive" target="Contained" Condition="-0.15" targetslot="1">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" tags="sonarprotection" duration="0.1" />
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.25" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.25" comparison="And" targetslot="0">
+        <Conditional InWater="true" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusHUD drawhudwhenequipped="true" range="3000" showdeadcharacters="true" showtexts="true" />
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.90" UseHullOxygen="true" ObstructVision="true" setvalue="true" disabledeltatime="true">
+        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect tags="PressureHelmet" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable identifiers="oxygensource,weldingtoolfuel" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" targetslot="1" />
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <!-- Coalition HORIZON X-AMCP MK3-->
+  <Item name="ORCA Deep Dive Helmet MK3 «Thermal»" identifier="horizonshelmetmk3" aliases="" category="Equipment" tags="smallitem,clothing,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" description="The bleeding edge of helmet technology. The best balance of protection and utility on the market, this helmet features thermal goggles, a headlamp, a rebreather, and further enhanced battery life." impactsoundtag="impact_metal_heavy" scale="0.4">
+    <Upgrade gameversion="0.9.6.0" scale="0.4" />
+    <Price baseprice="3012" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="25">
+      <RequiredSkill identifier="mechanical" level="35" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredSkill identifier="weapons" level="60" />
+      <RequiredItem identifier="horizonshelmetmk2" />
+      <RequiredItem identifier="thermalgoggles" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="physicorium" />
+      <RequiredItem identifier="fulgurium" />
+    </Fabricate>
+    <Sprite name="poweredorcahelm775" texture="%ModDir%/Saber/poweredheadgears.png" sourcerect="216,116,87,81" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagemultiplier="0.075" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="stun,progressivestun,incrementalstun" armorsector="0.0,360.0" damagemultiplier="0.20" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.20" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="emp" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.15" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.15" damagesound="LimbArmor" />
+      <!--Real Sonar support-->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="sonardamage" damagemultiplier="0.10" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="activesonarbeacon" damagemultiplier="0.10" damagesound="LimbArmor" /> -->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="acoustictrauma" damagemultiplier="0.05" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="vibrationdamage" damagemultiplier="0.05" damagesound="LimbArmor" /> -->
+      <!-- Zombie protection -->
+      <damagemodifier afflictiontypes="recentlybitten" damagemultiplier="0.15" probabilitymultiplier="0.15" />
+      <!-- Light toggle -->
+      <CustomInterface canbeselected="true" allowuioverlap="true" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="CenterLeft" style="ItemUI" />
+        <TickBox text="Light" IsOn="true">
+          <StatusEffect type="OnUse" target="This" HideFace="false" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" HideFace="false" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <sprite name="poweredorcahelm775 wearable" texture="%ModDir%/Saber/poweredheadgears.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inherittexturescale="false" scale="0.37" hideotherwearables="true" sourcerect="216,116,87,81" origin="0.4827586,0.4395062">
+        <LightComponent range="490" lightcolor="0.5,0.5,0.5,1.0" powerconsumption="5" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.03, 0.49" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnActive" target="Contained" Condition="-0.15" targetslot="1">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" tags="sonarprotection" duration="0.1" />
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional InWater="true" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusHUD drawhudwhenequipped="true" overlaycolor="125,0,0,120" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="true">
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.12,0.08" anchor="CenterLeft" relativeoffset="0.0,0.08" style="ItemUI" />
+          <TickBox text="Thermals" IsOn="true">
+            <StatusEffect type="OnUse" target="This" thermalgoggles="true" showdeadcharacters="false" showtexts="true" setvalue="true">
+              <RequiredItem items="mobilebattery" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" thermalgoggles="false" showdeadcharacters="false" showtexts="true" setvalue="true" />
+          </TickBox>
+        </CustomInterface>
+      </StatusHUD>
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.80" UseHullOxygen="true" ObstructVision="true" setvalue="true" disabledeltatime="true">
+        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect tags="PressureHelmet" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable identifiers="oxygensource,weldingtoolfuel" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" targetslot="1" />
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <!-- ORCA Phaethon rrR-#1 Helmet -->
+  <Item name="ORCA Phaethon rrR-#1 Helmet" identifier="phaethonhelmetmk1" aliases="" category="Equipment" tags="smallitem,clothing,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" description="An upgraded diving helmet designed to complement the rrR-#2 suit. Like its Horizons counterpart, it matches its respective suit's qualities, having greater agility and environmental protection than the Horizons series." impactsoundtag="impact_metal_heavy" scale="0.4">
+    <Upgrade gameversion="0.9.6.0" scale="0.4" />
+    <Price baseprice="1525" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredSkill identifier="electrical" level="15" />
+      <RequiredSkill identifier="weapons" level="45" />
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="advmaskedfreelancerhelmet" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="fpgacircuit" amount="2" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="advmaskedfreelancerhelmet" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Sprite name="poweredorcahelm47" texture="%ModDir%/Saber/hedba.png" sourcerect="0,0,86,82" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagemultiplier="0.20" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="stun,progressivestun,incrementalstun" armorsector="0.0,360.0" damagemultiplier="0.40" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.40" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.65" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="emp" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.20" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.30" damagesound="LimbArmor" />
+      <!--Real Sonar support-->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="sonardamage" damagemultiplier="0.30" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="activesonarbeacon" damagemultiplier="0.30" damagesound="LimbArmor" /> -->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="acoustictrauma" damagemultiplier="0.1" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="vibrationdamage" damagemultiplier="0.1" damagesound="LimbArmor" /> -->
+      <!-- Zombie protection -->
+      <damagemodifier afflictiontypes="recentlybitten" damagemultiplier="0.6" probabilitymultiplier="0.6" />
+      <!-- Light toggle -->
+      <CustomInterface canbeselected="true" allowuioverlap="true" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="CenterLeft" style="ItemUI" />
+        <TickBox text="Light" IsOn="true">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <sprite name="poweredorcahelm775 wearable" texture="%ModDir%/Saber/poweredheadgears.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inherittexturescale="false" scale="0.37" hideotherwearables="true" sourcerect="216,438,88,83" origin="0.4827586,0.4395062">
+        <LightComponent range="490" lightcolor="0.5,0.5,0.5,1.0" powerconsumption="5" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.03, 0.49" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnActive" target="Contained" Condition="-0.2" targetslot="1">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" tags="sonarprotection" duration="0.1" />
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+        <Conditional InWater="true" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.90" UseHullOxygen="true" ObstructVision="true" setvalue="true" disabledeltatime="true">
+        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect tags="PressureHelmet" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable identifiers="oxygensource,weldingtoolfuel" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" targetslot="1" />
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <!-- ORCA Phaethon rrR-#2 Helmet -->
+  <Item name="ORCA Phaethon rrR-#2 Helmet «Status»" identifier="phaethonhelmetmk2" aliases="" category="Equipment" tags="smallitem,clothing,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" description="An improved rrR-series helmet. While it lacks the health status HUD of the Horizons mk2 helmet, it boasts greater protection in turn." impactsoundtag="impact_metal_heavy" scale="0.4">
+    <Upgrade gameversion="0.9.6.0" scale="0.4" />
+    <Price baseprice="2134" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="1" maxavailable="2" sold="true">
+        <Reputation faction="separatists" min="60" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="55">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredSkill identifier="electrical" level="20" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="phaethonhelmetmk1" />
+      <RequiredItem identifier="physicorium" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="lead" />
+    </Fabricate>
+    <Deconstruct time="25">
+      <Item identifier="plastic" amount="9" />
+      <Item identifier="titanium" amount="6" />
+      <Item identifier="copper" amount="4" />
+      <Item identifier="Tin" amount="2" />
+      <Item identifier="phosphorus" />
+      <Item identifier="rubber" amount="3" />
+      <Item identifier="carbon" />
+      <Item identifier="aluminium" amount="5" />
+      <Item identifier="lead" />
+    </Deconstruct>
+    <Sprite name="poweredorcahelm13" texture="%ModDir%/Saber/poweredheadgears.png" sourcerect="320,438,88,83" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagemultiplier="0.12" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="stun,progressivestun,incrementalstun" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.25" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.45" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="emp" damagemultiplier="0.60" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.1" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.1" damagesound="LimbArmor" />
+      <!--Real Sonar support-->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="sonardamage" damagemultiplier="0.20" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="activesonarbeacon" damagemultiplier="0.20" damagesound="LimbArmor" /> -->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="acoustictrauma" damagemultiplier="0.05" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="vibrationdamage" damagemultiplier="0.05" damagesound="LimbArmor" /> -->
+      <!-- Zombie protection -->
+      <damagemodifier afflictiontypes="recentlybitten" damagemultiplier="0.45" probabilitymultiplier="0.45" />
+      <!-- Light toggle -->
+      <CustomInterface canbeselected="true" allowuioverlap="true" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="CenterLeft" style="ItemUI" />
+        <TickBox text="Light" IsOn="true">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <sprite name="poweredorcahelm775 wearable" texture="%ModDir%/Saber/poweredheadgears.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inherittexturescale="false" scale="0.37" hideotherwearables="true" sourcerect="320,438,88,83" origin="0.4827586,0.4395062">
+        <LightComponent range="490" lightcolor="0.5,0.5,0.5,1.0" powerconsumption="5" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.03, 0.49" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnActive" target="Contained" Condition="-0.2" targetslot="1">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" tags="sonarprotection" duration="0.1" />
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.18" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.18" comparison="And" targetslot="0">
+        <Conditional InWater="true" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusHUD drawhudwhenequipped="true" range="3000" showdeadcharacters="true" showtexts="true" />
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.85" UseHullOxygen="true" ObstructVision="true" setvalue="true" disabledeltatime="true">
+        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect tags="PressureHelmet" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable identifiers="oxygensource,weldingtoolfuel" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" targetslot="1" />
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <!-- ORCA Phaethon rrR-#3 Helmet -->
+  <Item name="ORCA Phaethon rrR-#3 Helmet «Thermal»" identifier="phaethonhelmetmk3" aliases="" category="Equipment" tags="smallitem,clothing,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" description="The supposed pinnacle of the rrR-series helms. Still, one has to wonder if there's a better helmet out there somewhere." impactsoundtag="impact_metal_heavy" scale="0.4">
+    <Upgrade gameversion="0.9.6.0" scale="0.4" />
+    <Price baseprice="3012" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="25">
+      <RequiredSkill identifier="mechanical" level="35" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredSkill identifier="weapons" level="60" />
+      <RequiredItem identifier="phaethonhelmetmk2" />
+      <RequiredItem identifier="thermalgoggles" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="30">
+      <Item identifier="plastic" amount="9" />
+      <Item identifier="titanium" amount="6" />
+      <Item identifier="copper" amount="4" />
+      <Item identifier="Tin" amount="2" />
+      <Item identifier="phosphorus" />
+      <Item identifier="rubber" amount="3" />
+      <Item identifier="carbon" />
+      <Item identifier="aluminium" amount="7" />
+      <Item identifier="lead" />
+    </Deconstruct>
+    <Sprite name="poweredorcahelm771" texture="%ModDir%/Saber/poweredheadgears.png" sourcerect="423,438,88,83" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagemultiplier="0.10" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="stun,progressivestun,incrementalstun" armorsector="0.0,360.0" damagemultiplier="0.10" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.10" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="slowparalysis" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="emp" damagemultiplier="0.30" damagesound="LimbArmor" />
+      <!--Real Sonar support-->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="sonardamage" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="activesonarbeacon" damagemultiplier="0.0" damagesound="LimbArmor" /> -->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="acoustictrauma" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="vibrationdamage" damagemultiplier="0.0" damagesound="LimbArmor" /> -->
+      <!-- Zombie protection -->
+      <damagemodifier afflictiontypes="recentlybitten" damagemultiplier="0.0" probabilitymultiplier="0.0" />
+      <!-- Light toggle -->
+      <CustomInterface canbeselected="true" allowuioverlap="true" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="CenterLeft" style="ItemUI" />
+        <TickBox text="Light" IsOn="true">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <sprite name="poweredorcahelm775 wearable" texture="%ModDir%/Saber/poweredheadgears.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inherittexturescale="false" scale="0.37" hideotherwearables="true" sourcerect="423,438,88,83" origin="0.4827586,0.4395062">
+        <LightComponent range="490" lightcolor="0.5,0.5,0.5,1.0" powerconsumption="5" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.03, 0.49" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnActive" target="Contained" Condition="-0.15" targetslot="1">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" tags="sonarprotection" duration="0.1" />
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.06" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.06" comparison="And" targetslot="0">
+        <Conditional InWater="true" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusHUD drawhudwhenequipped="true" overlaycolor="125,0,0,120" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="true">
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.12,0.08" anchor="CenterLeft" relativeoffset="0.0,0.08" style="ItemUI" />
+          <TickBox text="Thermals" IsOn="true">
+            <StatusEffect type="OnUse" target="This" thermalgoggles="true" showdeadcharacters="false" showtexts="true" setvalue="true">
+              <RequiredItem items="mobilebattery" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" thermalgoggles="false" showdeadcharacters="false" showtexts="true" setvalue="true" />
+          </TickBox>
+        </CustomInterface>
+      </StatusHUD>
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.80" UseHullOxygen="true" ObstructVision="true" setvalue="true" disabledeltatime="true">
+        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect tags="PressureHelmet" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable identifiers="oxygensource,weldingtoolfuel" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" targetslot="1" />
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <!-- ORCA Phaethon rrR-#4 Helmet «Rabbit» -->
+  <Item name="ORCA Phaethon rrR-#4 Helmet «Rabbit»" identifier="orcarabbithelmet" aliases="" category="Equipment" tags="smallitem,clothing,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" description="Hop on!" impactsoundtag="impact_metal_heavy" scale="0.4">
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" spawnprobability="0.01" />
+    <Upgrade gameversion="0.9.6.0" scale="0.4" />
+    <Price baseprice="2869" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+    </Price>
+    <Sprite name="rabbithelmet1" texture="%ModDir%/Saber/poweredheadgears.png" sourcerect="531,411,88,109" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damagemultiplier="0.05" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion,stun,progressivestun,incrementalstun" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.05" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.05" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="slowparalysis" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="emp" damagemultiplier="0.30" damagesound="LimbArmor" />
+      <!--Real Sonar support-->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="sonardamage" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="activesonarbeacon" damagemultiplier="0.0" damagesound="LimbArmor" /> -->
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="acoustictrauma" damagemultiplier="0.0" damagesound="LimbArmor" />
+      <!-- <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="vibrationdamage" damagemultiplier="0.0" damagesound="LimbArmor" /> -->
+      <!-- Zombie protection -->
+      <damagemodifier afflictiontypes="recentlybitten" damagemultiplier="0.0" probabilitymultiplier="0.0" />
+      <!-- Light toggle -->
+      <CustomInterface canbeselected="true" allowuioverlap="true" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.12,0.08" anchor="CenterLeft" style="ItemUI" />
+        <TickBox text="Light" IsOn="true">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+        <Button text="Buzzer">
+          <StatusEffect type="OnUse" target="This">
+            <Sound file="Content/Items/WarningBeep.ogg" range="1000" volume="2" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <sprite name="rabbithelm wearable" texture="%ModDir%/Saber/poweredheadgears.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inherittexturescale="false" scale="0.37" hideotherwearables="true" sourcerect="531,411,88,109" origin="0.6,0.59266055">
+        <LightComponent range="500" lightcolor="0.5,0.5,0.5,1.0" powerconsumption="5" IsOn="true">
+          <StatusEffect type="OnWearing" target="This,Character" Voltage="1.0" setvalue="true">
+            <Conditional IsDead="false" />
+          </StatusEffect>
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.03, 0.49" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnWearing" target="Character" tags="sonarprotection" duration="0.1" />
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" comparison="And" targetslot="0" SpeedMultiplier="1.75">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" comparison="And" targetslot="0" SpeedMultiplier="1.75">
+        <Conditional InWater="true" />
+        <RequiredItem items="oxygensource" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" ObstructVision="true" setvalue="true" disabledeltatime="true">
+        <Affliction identifier="zombieimmunitytemporary" amount="2" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect tags="PressureHelmet" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+      <StatusHUD drawhudwhenequipped="true" overlaycolor="125,0,0,120" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="true">
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.12,0.08" anchor="CenterLeft" relativeoffset="0.0,0.08" style="ItemUI" />
+          <TickBox text="Thermals" IsOn="true">
+            <StatusEffect type="OnUse" target="This" thermalgoggles="true" showdeadcharacters="true" showtexts="true" setvalue="true" />
+            <StatusEffect type="OnSecondaryUse" target="This" thermalgoggles="false" showdeadcharacters="true" showtexts="true" setvalue="true" />
+          </TickBox>
+        </CustomInterface>
+      </StatusHUD>
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <Containable identifiers="oxygensource,weldingtoolfuel" />
+    </ItemContainer>
+  </Item>
+</Items>

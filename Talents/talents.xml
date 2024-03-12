@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <Talent identifier="encroachingterror">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.encroachingterror">
+      <Replace tag="[afflictionname]" value="afflictionname.killerinstinct" color="gui.orange" />
+      <Replace tag="[maxattackspeed]" value="25" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval>
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="killerinstinct" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyFlag flagtype="MustWalk" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupInterval>
+      <Conditions>
+        <AbilityConditionHasItem tags="killermask" requireall="true" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="MeleeAttackSpeed" value="0.25" />
+        <CharacterAbilityModifyStat stattype="RangedAttackSpeed" value="-0.99" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupInterval>
+      <Conditions>
+        <AbilityConditionHasItem tags="deepdiving" requireall="true" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="WalkingSpeed" value="1.0" />
+        <CharacterAbilityModifyStat stattype="SwimmingSpeed" value="1.0" />
+        <CharacterAbilityModifyStat stattype="MeleeAttackSpeed" value="-0.99" />
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="cleanliness">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,2" sheetelementsize="128,128" />
+    <Description tag="talentdescription.cleanliness" />
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.dirtybomb" color="gui.orange" />
+    </Description>
+    <Description tag="talentdescription.gainalltalentsintree" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <!-- <CharacterAbilityUnlockTree/> -->
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="dirtybomb" />
+  </Talent>
+  <Talent identifier="slaughter">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,2" sheetelementsize="128,128" />
+    <Description tag="talentdescription.slaughter" />
+    <Description tag="talentdescription.gainalltalentsintree" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityUnlockTree />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="truebeliever">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.truebeliever" />
+    <AbilityGroupInterval interval="0.9">
+      <Conditions>
+        <AbilityConditionHasItem tags="cultrobe,culthood" requireall="true" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="cultistimmunity" amount="1.0" setvalue="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AddedRecipe itemidentifier="cultdoc" />
+  </Talent>
+  <!-- You Are Nothing: Based on Kromer's evasion skill, dodges the enemy and drains their sanity -->
+  <Talent identifier="youarenothing">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,4" sheetelementsize="128,128" />
+    <Description tag="talentdescription.youarenothing">
+      <Replace tag="[seconds]" value="10" color="gui.green" />
+      <Replace tag="[powerreduction]" value="100" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+              <Affliction identifier="evade" amount="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="evade" minimumpercentage="1.0" />
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-1.0" />
+        <CharacterAbilityApplyStatusEffectsToAttacker>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="penance" amount="20.0" />
+              <Affliction identifier="fanaticdetection" amount="60" />
+              <ParticleEmitter particle="cult_rune" distancemin="0" distancemax="50" particleamount="5" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
+              <sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="500" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAttacker>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This">
+              <ReduceAffliction identifier="evade" strength="10.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- Counter: Based on the Limbus "Counter" skill, hits the enemy back with some bleed and lacerations when you are hit. Activates every 5 seconds but only grants a 10% resist. -->
+  <Talent identifier="counter">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.counter">
+      <Replace tag="[seconds]" value="5" color="gui.green" />
+      <Replace tag="[powerreduction]" value="10" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+              <Affliction identifier="guarded" amount="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="guarded" minimumpercentage="1.0" />
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.1" />
+        <CharacterAbilityApplyStatusEffectsToAttacker>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="bleeding" amount="15.0" />
+              <Affliction identifier="lacerations" amount="15.0" />
+              <Affliction identifier="fanaticdetection" amount="60" />
+              <ParticleEmitter particle="cult_rune" distancemin="0" distancemax="50" particleamount="5" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
+              <sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="500" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAttacker>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This">
+              <ReduceAffliction identifier="guarded" strength="10.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="whistles">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.whistles">
+      <Replace tag="[meters]" value="10" color="gui.green" />
+      <Replace tag="[fanatic]" value="10" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="1000" jobs="purifier" allowself="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Conditional fanatic="lt 9" />
+              <Affliction identifier="fanatic" strength="10.0" setvalue="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="inquisition">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.inquisition" />
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="Always" target="Character" delay="1" stackable="false">
+              <Affliction identifier="fanaticmanager" amount="1.0" setvalue="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+</Talents>
