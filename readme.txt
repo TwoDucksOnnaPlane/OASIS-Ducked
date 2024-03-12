@@ -34,3 +34,5 @@ CPO Chuckles || KD
 Mr. Vollidiot
 
 ===================================DISCLAIMER===================================
+
+Duck's Addendum: If Onyx's code is 'gibberish', then mine is ancient runes, good luck, most changes will either be commented in the steam patchnotes or on the github repo.
